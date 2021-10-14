@@ -1,3 +1,17 @@
+const { src, dest, parallel, watch } = require("gulp");
+const sass = require("gulp-sass")(require("sass"));
+const concat = require("gulp-concat");
+const pug = require("gulp-pug");
+const browserSync = require("browser-sync").create();
+const svgSprite = require("gulp-svg-sprite");
+
+const bsync = () => {
+  browserSync.init({
+    server: { baseDir: "./dist/" },
+    online: true,
+  });
+};
+
 // Перенос скриптов из node_modules в директорию dist/js
 const scripts = () => {
   return src([
@@ -41,3 +55,26 @@ const svg2sprite = () => {
     .pipe(svgSprite(config))
     .pipe(dest("./dist/images/icons/"));
 };
+
+const build = (done) => {
+  pug2html();
+  svg2sprite();
+  scripts();
+  sass2css();
+  done();
+};
+
+const watchDefaulConf = {
+  delay: 0,
+  usePolling: true,
+};
+
+const wwatch = () => {
+  watch(["app/**/*.js"], watchDefaulConf, scripts);
+  watch(["app/**/*.scss"], watchDefaulConf, sass2css);
+  watch(["app/**/*.pug"], watchDefaulConf, pug2html);
+};
+
+exports.build = build;
+
+exports.default = parallel(svg2sprite, bsync, wwatch);

@@ -1,0 +1,34 @@
+.contact {
+  @include box-shadow($box-shadow-sm);
+  @include transition($transition-base);
+
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+
+  &-status {
+    @include transition($transition-base);
+
+    color: map-get($theme-colors, "secondary");
+
+    font-size: 80%;
+  }
+
+  &-name {
+    @include transition($transition-base);
+
+    color: map-get($theme-colors, "dark");
+
+    font-weight: 700;
+  }
+
+  &:hover {
+    background-color: map-get($theme-colors, "primary");
+  }
+
+  &:hover &-name,
+  &:hover &-status {
+    color: $white;
+  }
+}

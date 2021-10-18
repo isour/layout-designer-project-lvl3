@@ -61,6 +61,8 @@ const build = (done) => {
   svg2sprite();
   scripts();
   sass2css();
+  cp();
+  cpFonts();
   done();
 };
 
@@ -73,8 +75,16 @@ const wwatch = () => {
   watch(["app/**/*.js"], watchDefaulConf, scripts);
   watch(["app/**/*.scss"], watchDefaulConf, sass2css);
   watch(["app/**/*.pug"], watchDefaulConf, pug2html);
+  watch(["app/images/icons/*.*"], watchDefaulConf, svg2sprite);
+  watch(["app/images/*.jpg", "app/images/*.png"], watchDefaulConf, cp);
+  watch(["app/fonts/**/*.*"], watchDefaulConf, cpFonts);
 };
+
+const cp = (done) =>
+  src(["app/images/*.jpg", "app/images/*.png"]).pipe(dest("./dist/images/"));
+
+const cpFonts = (done) => src(["app/fonts/**/*.*"]).pipe(dest("./dist/fonts/"));
 
 exports.build = build;
 
-exports.default = parallel(svg2sprite, bsync, wwatch);
+exports.default = parallel(build, bsync, wwatch);

@@ -1,0 +1,21 @@
+mixin header()
+  HEADER.header.bg-primary.radius-md-top-start-1.p-3.d-flex.justify-content-end.align-items-center&attributes(attributes)
+    a.header-logo.mr-auto.text-white.me-auto.d-flex.align-items-center(href = "/" title = "На главную")
+      svg.h-25px.w-25px(fill='currentColor')
+        use(xlink:href='./images/icons/sprite.svg#logo')
+    ul.header-menu.nav.nav-tabs.border-0
+      li.nav-item
+        a.nav-link.border-0.text-light.px-08-r(href = "#")
+          svg.h-25px.w-25px.me-2(fill='currentColor')
+            use(xlink:href='./images/icons/sprite.svg#people')
+          span.d-none.d-md-inline.small Контакты
+      li.nav-item
+        a.nav-link.border-0.text-light.px-08-r(href = "#")
+          svg.h-25px.w-25px.me-2(fill='currentColor')
+            use(xlink:href='./images/icons/sprite.svg#chat')
+          span.d-none.d-md-inline.small Сообщения
+      li.nav-item
+        a.nav-link.border-0.text-light.px-08-r(href = "#")
+          svg.h-25px.w-25px.me-2(fill='currentColor')
+            use(xlink:href='./images/icons/sprite.svg#person')
+          span.d-none.d-md-inline.small Профиль

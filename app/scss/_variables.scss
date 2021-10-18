@@ -1,3 +1,5 @@
+$font-family-base: "Roboto";
+
 $theme-colors: (
   "gray": #efefef,
   "primary": #4545a5,
@@ -27,5 +29,7 @@ $container-max-widths: (
   xxl: 1540px,
 );
 
-$border-radius: 1rem;
 $enable-shadows: true;
+$border-radius-xl: 1rem;
+$border-radius: 1rem;
+$input-border-radius: 0;

@@ -1,0 +1,53 @@
+mixin contacts()
+  .contacts&attributes(attributes)
+    H2.contacts-title.fw-bold.mb-4 Контакты
+    FORM.contacts-form(action = "#")
+      .form-group
+        INPUT.contacts-input.form-control.px-4.pt-3.pb-2.border-top-0.border-start-0.border-end-0.border-gray.shadow-none(type = "text" placeholder = "Поиск по контактам")
+    each humans, char in contacts
+      .contacts-letter.text-muted.mt-5.mb-3 #{char}
+      each human in humans
+        a.contact.contacts-human.px-3.mb-3(href = "#" title = human.name)
+          img.avatar.contact-avatar(src = human.avatar alt = human.name)
+          .contact-content.py-4.px-4
+            .contact-name #{human.name}
+            .contact-status #{human.status}
+
+
+-
+  var contacts = {
+    "A": [{
+      name: "Алексей Примадонин",
+      status: "Онлайн",
+      avatar: "/images/avatar_3.jpg"
+    }],
+
+    "В": [{
+      name: "Вениамин Редакторович",
+      status: "Онлайн",
+      avatar: "/images/avatar_4.jpg"
+    }],
+
+    "Д": [{
+      name: "Джедай Падаванов",
+      status: "Был онлайн вчера",
+      avatar: "/images/avatar_2.jpg"
+    }],
+
+    "К": [{
+      name: "Кодовёнок Хекслетович",
+      status: "Был онлайн 3 часа назад",
+      avatar: "/images/avatar_1.jpg"
+    },
+    {
+      name: "Королева Верстальщина",
+      status: "Была онлайн вчера",
+      avatar: "/images/avatar_5.jpg"
+    }],
+
+    "П": [{
+      name: "Питонист Джангович",
+      status: "Был онлайн вчера",
+      avatar: "/images/avatar_6.jpg"
+    }],
+  }

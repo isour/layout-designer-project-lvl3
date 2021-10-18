@@ -1,5 +1,15 @@
 .layout {
   height: 100vh;
-  &-aside {
+  overflow: hidden;
+
+  &-container {
+    position: relative;
+  }
+
+  &-content {
+  }
+
+  &-aside-content {
+    @include hide-scrollbar;
   }
 }

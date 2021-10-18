@@ -1,0 +1,22 @@
+.radius-1 {
+  border-radius: 1rem;
+}
+
+@include media-breakpoint-up(md) {
+  .radius-md-top-start-1 {
+    border-top-left-radius: 1em;
+  }
+}
+
+.px-08-r {
+  padding-right: 0.8rem !important;
+  padding-left: 0.8rem !important;
+}
+
+.h-25px {
+  height: 25px;
+}
+
+.w-25px {
+  width: 25px;
+}

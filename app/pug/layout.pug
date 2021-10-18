@@ -1,3 +1,6 @@
+include ../pug/contacts.pug
+include header.pug
+
 doctype html
 html(lang='ru')
   head
@@ -8,15 +11,17 @@ html(lang='ru')
     block styles
       link(href='styles/app.css' rel='stylesheet')
 
-  body.layout.bg-gray.p-0
-    .layout__container.container-xxl
-      header.layout-header
-      aside.layout-aside
-        .layout-contacts.pt-5.px-4
-        .layout-chatslist
-        .layout-profile
-        .layout-chats.layout-chats-mobile
-      .layout-content
-        .layout-hello
-        .layout-chats.layout-chats-desktop
-      block content
+  body.layout.bg-gray.p-0.p-md-4
+    .container-xxl.h-100
+      main.layout-container.bg-white.radius-1.h-100.row.flex-md-row
+        aside.layout-aside.col.col-md-4.px-0.h-100.d-flex.flex-column
+          +header.layout-header.order-1.order-md-0
+          .layout-aside-content.pt-5.px-4.order-0.order-md-1
+            +contacts.layout-contacts
+            .layout-chatslist.d-none
+            .layout-profile.d-none
+            .layout-chats.layout-chats-mobile.d-none
+        .layout-content.border-start.border-gray.col.h-100.d-none.d-md-block
+          .layout-hello
+          .layout-chats.layout-chats-desktop
+          block content

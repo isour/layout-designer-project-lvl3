@@ -1,0 +1,65 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+    .radius#{$infix} {
+      border-radius: $border-radius;
+    }
+    .radius#{$infix}-sm {
+      border-radius: $border-radius-sm;
+    }
+    .radius#{$infix}-lg {
+      border-radius: $border-radius-lg;
+    }
+    .radius#{$infix}-none {
+      border-radius: 0;
+    }
+
+    .radius#{$infix}-start {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+    .radius#{$infix}-sm-start {
+      border-top-left-radius: $border-radius-sm;
+      border-bottom-left-radius: $border-radius-sm;
+    }
+    .radius#{$infix}-lg-start {
+      border-top-left-radius: $border-radius-lg;
+      border-bottom-left-radius: $border-radius-lg;
+    }
+    .radius#{$infix}-none-v {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .radius#{$infix}-end {
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+    .radius#{$infix}-sm-end {
+      border-top-right-radius: $border-radius-sm;
+      border-bottom-right-radius: $border-radius-sm;
+    }
+    .radius#{$infix}-lg-end {
+      border-top-right-radius: $border-radius-lg;
+      border-bottom-right-radius: $border-radius-lg;
+    }
+    .radius#{$infix}-none-end {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    .radius#{$infix}-left-top {
+      border-top-left-radius: $border-radius;
+    }
+    .radius#{$infix}-sm-start-top {
+      border-top-left-radius: $border-radius-sm;
+    }
+    .radius#{$infix}-lg-start-top {
+      border-top-left-radius: $border-radius-lg;
+    }
+    .radius#{$infix}-none-start-top {
+      border-top-left-radius: 0;
+    }
+  }
+}

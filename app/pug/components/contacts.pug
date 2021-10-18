@@ -1,9 +1,9 @@
+include search.pug
+
 mixin contacts()
   .contacts&attributes(attributes)
     H2.contacts-title.fw-bold.mb-4 Контакты
-    FORM.contacts-form(action = "#")
-      .form-group
-        INPUT.contacts-input.form-control.px-4.pt-3.pb-2.border-top-0.border-start-0.border-end-0.border-gray.shadow-none(type = "text" placeholder = "Поиск по контактам")
+    +search({"placeholder": "Поиск по контактам"}).messages-form
     each humans, char in contacts
       .contacts-letter.text-muted.mt-5.mb-3 #{char}
       each human in humans

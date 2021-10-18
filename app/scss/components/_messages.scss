@@ -1,0 +1,65 @@
+.message {
+  @include box-shadow($box-shadow-sm);
+  @include transition($transition-base);
+
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+
+  &-status {
+    @include transition($transition-base);
+
+    overflow: hidden;
+
+    color: map-get($theme-colors, "secondary");
+
+    font-size: 80%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &-header {
+    display: flex;
+    align-items: center;
+  }
+
+  &-time {
+    position: relative;
+    top: -2px;
+
+    margin-left: auto;
+
+    color: map-get($theme-colors, "secondary");
+    font-size: 80%;
+  }
+
+  &-content {
+    flex: 1 1 auto;
+    overflow: hidden;
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &-name {
+    @include transition($transition-base);
+    overflow: hidden;
+
+    color: map-get($theme-colors, "dark");
+
+    font-weight: 700;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &:hover {
+    background-color: map-get($theme-colors, "primary");
+  }
+
+  &:hover &-name,
+  &:hover &-time,
+  &:hover &-status {
+    color: $white;
+  }
+}

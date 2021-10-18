@@ -1,5 +1,6 @@
 include contacts.pug
 include components/messages.pug
+include components/profile.pug
 include header.pug
 
 doctype html
@@ -22,7 +23,7 @@ html(lang='ru')
           .layout-aside-content.pt-5.px-4.order-0.order-md-1.tab-content.flex-grow-1.flex-shrink-1
             +contacts.layout-contacts.tab-pane.fade.show.active#contacts(role = "tabpanel")
             +messages.layout-chatslist.tab-pane.fade#chats
-            .layout-profile.tab-pane.fade#profile
+            +profile.layout-profile.tab-pane.fade#profile
             .layout-chats.layout-chats-mobile.d-none.tab-pane#current-chat
         .layout-content.border-start.border-gray.col.h-100.d-none.d-md-block
           .layout-hello

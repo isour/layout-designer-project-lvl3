@@ -1,0 +1,4 @@
+mixin search(data)
+  FORM.search&attributes(attributes)(action = "#")
+    .form-group.mb-5
+      INPUT.messages-input.form-control.px-4.pt-3.pb-2.border-top-0.border-start-0.border-end-0.border-gray.shadow-none(type = "text" placeholder = data.placeholder)

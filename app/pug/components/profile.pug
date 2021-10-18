@@ -1,0 +1,38 @@
+mixin profile()
+  .profile&attributes(attributes)
+    H2.profile-title.fw-bold.mb-4 Профиль
+    +search({"placeholder": "Поиск по сообщениям"}).messages-form
+    .card.border-0.mb-5.pt-4
+      .card-body
+        img.card-img-top.w-90px.rounded-circle.d-block.mx-auto.mb-3(src = "images/avatar_big.jpg" alt = "Кодовёнок Хекслетович")
+        h6.card-title.text-center.mb-3.text-dark Кодовёнок Хекслетович
+        p.card-text.text-center.text-secondary Милый и скромный помощник начинающих разработчиков. Люблю JavaScript
+    ul.list-group.py-5.px-4
+      li.list-group-item.d-flex.justify-content-space-between.align-items-center.border-top-0.border-start-0.border-end-0.border-gray.py-7
+        .list-group-content.flex-grow-1
+          p.text-secondary.mb-0.fz-80p Страна
+          p.text-dark.mb-0.fz-80p Москва, Россия
+        .list-group-media
+          svg.h-1r.w-1r.text-black-50(fill='currentColor')
+            use(xlink:href='./images/icons/sprite.svg#globe')
+      li.list-group-item.d-flex.justify-content-space-between.align-items-center.border-top-0.border-start-0.border-end-0.border-gray.py-7
+        .list-group-content.flex-grow-1
+          p.text-secondary.mb-0.fz-80p Телефон
+          p.text-dark.mb-0.fz-80p +7 (499) 123-45-67
+        .list-group-media
+          svg.h-1r.w-1r.text-black-50(fill='currentColor')
+            use(xlink:href='./images/icons/sprite.svg#phone')
+      li.list-group-item.d-flex.justify-content-space-between.align-items-center.border-top-0.border-start-0.border-end-0.border-gray.py-7
+        .list-group-content.flex-grow-1
+          p.text-secondary.mb-0.fz-80p Email
+          p.text-dark.mb-0.fz-80p nikita.m@hexlet.io
+        .list-group-media
+          svg.h-1r.w-1r.text-black-50(fill='currentColor')
+            use(xlink:href='./images/icons/sprite.svg#mail')
+      li.list-group-item.d-flex.justify-content-space-between.align-items-center.border-0.py-7
+        .list-group-content.flex-grow-1
+          p.text-secondary.mb-0.fz-80p Twitter
+          p.text-dark.mb-0.fz-80p @n__mikhaylov
+        .list-group-media
+          svg.h-1r.w-1r.text-black-50(fill='currentColor')
+            use(xlink:href='./images/icons/sprite.svg#twitter')

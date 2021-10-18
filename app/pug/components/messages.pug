@@ -1,17 +1,17 @@
+include search.pug
+
 mixin messages()
   .messages&attributes(attributes)
     H2.messages-title.fw-bold.mb-4 Чаты
-    FORM.messages-form(action = "#")
-      .form-group.mb-5
-        INPUT.messages-input.form-control.px-4.pt-3.pb-2.border-top-0.border-start-0.border-end-0.border-gray.shadow-none(type = "text" placeholder = "Поиск по сообщениям")
-      each chat in chats
-        a.message.messages-chat.px-3.mb-3(href = "#" title = chat.name)
-          img.avatar.message-avatar(src = chat.avatar alt = chat.name)
-          .message-content.py-4.ps-4
-            .message-header
-              span.message-name #{chat.name}
-              span.message-time #{chat.time}
-            .message-status #{chat.status}
+    +search({"placeholder": "Поиск по сообщениям"}).messages-form
+    each chat in chats
+      a.message.messages-chat.px-3.mb-3(href = "#" title = chat.name)
+        img.avatar.message-avatar(src = chat.avatar alt = chat.name)
+        .message-content.py-4.ps-4
+          .message-header
+            span.message-name #{chat.name}
+            span.message-time #{chat.time}
+          .message-status #{chat.status}
 
 -
   var chats = [

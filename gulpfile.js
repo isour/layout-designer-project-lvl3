@@ -7,7 +7,7 @@ const svgSprite = require("gulp-svg-sprite");
 
 const bsync = () => {
   browserSync.init({
-    server: { baseDir: "./dist/" },
+    server: { baseDir: "./build/" },
     online: true,
   });
 };
@@ -17,7 +17,7 @@ const scripts = () => {
   return src([
     "./node_modules/jquery/dist/jquery.min.js",
     // Здесь остальные скрипты
-  ]).pipe(dest("./dist/js/"));
+  ]).pipe(dest("./build/js/"));
 };
 
 // Компиляция SASS в единый CSS файл
@@ -28,7 +28,7 @@ const sass2css = () => {
   ])
     .pipe(sass())
     .pipe(concat("app.css"))
-    .pipe(dest("./dist/styles/"));
+    .pipe(dest("./build/styles/"));
 
   // Обработка через плагин sass, указание конечного файла и его месторасположение
 };
@@ -37,7 +37,7 @@ const sass2css = () => {
 const pug2html = () => {
   return src(["app/pages/index.pug", "app/pages/chat.pug"])
     .pipe(pug())
-    .pipe(dest("./dist/"));
+    .pipe(dest("./build/"));
 };
 
 // Создание svg спрайта из иконок
@@ -53,7 +53,7 @@ const svg2sprite = () => {
 
   return src(["./app/images/icons/*.svg"])
     .pipe(svgSprite(config))
-    .pipe(dest("./dist/images/icons/"));
+    .pipe(dest("./build/images/icons/"));
 };
 
 const build = (done) => {
@@ -81,9 +81,9 @@ const wwatch = () => {
 };
 
 const cp = (done) =>
-  src(["app/images/*.jpg", "app/images/*.png"]).pipe(dest("./dist/images/"));
+  src(["app/images/*.jpg", "app/images/*.png"]).pipe(dest("./build/images/"));
 
-const cpFonts = (done) => src(["app/fonts/**/*.*"]).pipe(dest("./dist/fonts/"));
+const cpFonts = (done) => src(["app/fonts/**/*.*"]).pipe(dest("./build/fonts/"));
 
 exports.build = build;
 

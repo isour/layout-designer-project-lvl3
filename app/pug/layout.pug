@@ -1,7 +1,8 @@
 include components/contacts.pug
 include components/messages.pug
 include components/profile.pug
-include header.pug
+include components/hello.pug
+include components/header.pug
 
 doctype html
 html(lang='ru')
@@ -26,6 +27,6 @@ html(lang='ru')
             +profile.layout-profile.tab-pane.fade#profile
             .layout-chats.layout-chats-mobile.d-none.tab-pane#current-chat
         .layout-content.border-md-start.border-gray.col.h-100.d-none.d-md-block
-          .layout-hello
-          .layout-chats.layout-chats-desktop
+          //- .layout-chats.layout-chats-desktop
           block content
+            +hello.layout-hello.h-100

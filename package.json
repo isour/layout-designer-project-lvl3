@@ -8,7 +8,9 @@
   },
   "scripts": {
     "build": "npx gulp build",
-    "start": "npx gulp"
+    "start": "npx gulp",
+    "stylelint": "npx stylelint ./app/scss/**/*.scss",
+    "deploy": "npx surge ./dist/ hchat.surge.sh"
   },
   "main": "",
   "dependencies": {},

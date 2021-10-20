@@ -7,6 +7,9 @@ include ../pug/components/chat-form.pug
 block header
   +header({"chat": true}).layout-header.order-1.order-md-0
 
+append vars
+  - chatPage = true
+
 block chat
   .chat.h-100
     +chat-header.px-3

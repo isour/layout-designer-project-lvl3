@@ -13085,7 +13085,11 @@ h6,
   }
 }
 .chat-messages-content {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  padding: 1.5rem;
   color: #6c757d;
+  background-color: #fbfbfb;
+  border-radius: 1rem;
 }
 .chat-messages-ava {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
@@ -13093,12 +13097,6 @@ h6,
 .chat-messages-media {
   flex: 0 0 auto;
   padding-right: 1rem;
-}
-.chat-messages-content {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  padding: 1.5rem;
-  background-color: #fbfbfb;
-  border-radius: 1rem;
 }
 .chat-messages-content-primary {
   color: #fff;
@@ -13113,7 +13111,7 @@ h6,
   margin-bottom: 0.25rem;
 }
 .chat-messages-date {
-  padding-top: 0.25rem;
+  padding-top: 0.5rem;
   font-size: 80%;
   border-top: 1px solid #fbfbfb;
 }

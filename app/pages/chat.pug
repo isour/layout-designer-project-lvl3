@@ -1,4 +1,20 @@
 extends ../pug/layout.pug
 
+include ../pug/components/chat-header.pug
+include ../pug/components/chat-messages.pug
+include ../pug/components/chat-form.pug
+
+block header
+  +header({"chat": true}).layout-header.order-1.order-md-0
+
+block chat
+  .chat.h-100
+    +chat-header.px-3
+    +chat-messages.p-5
+    +chat-form.mx-md-5.py-2.px-3.border-top
+
 block content
-  | 23
+  .chat.no-scrollbar.h-100
+    +chat-header.px-3
+    +chat-messages.p-5
+    +chat-form.mx-md-5.py-2.px-3.border-top

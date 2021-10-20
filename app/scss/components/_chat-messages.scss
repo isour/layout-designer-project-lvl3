@@ -1,0 +1,67 @@
+.chat-messages {
+  &-item {
+    display: flex;
+    align-items: flex-end;
+
+    @include media-breakpoint-up(md) {
+      max-width: 75%;
+    }
+  }
+
+  &-item-owner {
+    @include media-breakpoint-up(md) {
+      margin-left: auto;
+    }
+  }
+
+  &-content {
+    color: map-get($theme-colors, "secondary");
+  }
+
+  &-ava {
+    @include box-shadow($box-shadow-sm);
+  }
+
+  &-media {
+    flex: 0 0 auto;
+    padding-right: map-get($spacers, 3);
+  }
+
+  &-content {
+    @include box-shadow($box-shadow-sm);
+
+    padding: map-get($spacers, 4);
+
+    background-color: map-get($theme-colors, "light");
+    border-radius: 1rem;
+  }
+
+  &-content-primary {
+    color: #fff;
+
+    background-color: map-get($theme-colors, "primary");
+  }
+
+  &-title {
+    margin-bottom: map-get($spacers, 1);
+
+    color: map-get($theme-colors, "dark");
+    font-weight: 700;
+  }
+
+  &-text {
+    margin-bottom: map-get($spacers, 1);
+  }
+
+  &-date {
+    padding-top: map-get($spacers, 1);
+
+    font-size: 80%;
+
+    border-top: $border-width solid map-get($theme-colors, "light");
+  }
+
+  &-content-primary &-date {
+    border-top: $border-width solid map-get($theme-colors, "gray");
+  }
+}

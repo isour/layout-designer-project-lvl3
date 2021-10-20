@@ -9,7 +9,11 @@
   &-content {
   }
 
-  &-aside-content {
+  &-contacts,
+  &-chatlist,
+  &-profile,
+  &-chat {
     @include hide-scrollbar;
+    overflow-y: auto;
   }
 }

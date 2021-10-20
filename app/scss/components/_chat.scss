@@ -1,0 +1,28 @@
+.chat {
+  overflow-y: auto;
+
+  &-header {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+
+    background-color: #fff;
+  }
+
+  &-messages {
+    position: relative;
+    z-index: 1;
+  }
+
+  &-form {
+    position: sticky;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+
+    background-color: #fff;
+  }
+}

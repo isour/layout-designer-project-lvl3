@@ -1,0 +1,19 @@
+.chat-header {
+  display: flex;
+  align-items: center;
+
+  &-content {
+    padding-left: 1.5rem;
+  }
+
+  &-name {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  &-status {
+    color: map-get($theme-colors, "secondary");
+    font-size: 80%;
+  }
+}

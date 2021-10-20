@@ -1,0 +1,19 @@
+.chat-form {
+  &-input {
+    padding: map-get($spacers, 4) map-get($spacers, 2);
+
+    border: none;
+  }
+
+  &-submit {
+    --size: 42px;
+
+    flex-basis: var(--size);
+    width: var(--size);
+    height: var(--size);
+
+    @include media-breakpoint-up(md) {
+      --size: 50px;
+    }
+  }
+}

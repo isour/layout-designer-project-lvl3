@@ -30,3 +30,15 @@
 .fz-80p {
   font-size: 80%;
 }
+
+.w-15e {
+  width: 1.5em;
+}
+
+.h-15e {
+  height: 1.5em;
+}
+
+.no-scrollbar {
+  @include hide-scrollbar;
+}

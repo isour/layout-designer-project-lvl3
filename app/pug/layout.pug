@@ -18,15 +18,17 @@ html(lang='ru')
 
   body.layout.bg-gray.p-0.p-md-4
     .container-xxl.h-100
-      main.layout-container.bg-white.radius-1.h-100.row.flex-md-row
+      main.layout-container.bg-white.radius-1.h-100.row.flex-md-row.overflow-hidden
         aside.layout-aside.col.col-md-4.px-0.h-100.d-flex.flex-column
-          +header.layout-header.order-1.order-md-0
-          .layout-aside-content.pt-5.px-4.order-0.order-md-1.tab-content.flex-grow-1.flex-shrink-1
-            +contacts.layout-contacts.tab-pane.fade.show.active#contacts(role = "tabpanel")
-            +messages.layout-chatslist.tab-pane.fade#chats
-            +profile.layout-profile.tab-pane.fade#profile
-            .layout-chats.layout-chats-mobile.d-none.tab-pane#current-chat
-        .layout-content.border-md-start.border-gray.col.h-100.d-none.d-md-block
+          block header
+            +header.layout-header.order-1.order-md-0
+          .layout-aside-content.order-0.order-md-1.tab-content.flex-grow-1.flex-shrink-1.overflow-hidden
+            +contacts.layout-contacts.tab-pane.fade.show.active.pt-5.px-4.h-100#contacts(role = "tabpanel")
+            +messages.layout-chatslist.tab-pane.fade.pt-5.px-4.h-100#chats
+            +profile.layout-profile.tab-pane.fade.pt-5.px-4.h-100#profile
+            .layout-chat.tab-pane.fade.h-100#chat
+              block chat
+        .layout-content.border-md-start.border-gray.col.h-100.d-none.d-md-block.p-0
           //- .layout-chats.layout-chats-desktop
           block content
             +hello.layout-hello.h-100

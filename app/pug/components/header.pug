@@ -6,7 +6,7 @@ mixin header(data)
     nav.header-menu.nav.nav-tabs.border-0
       if data && data.chat
         li.nav-item.d-md-none
-          a.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#chat" role = "tab"  aria-controls="contacts-tab" aria-selected="true" href="#chat")
+          a.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#current-chat" role = "tab"  aria-controls="contacts-tab" aria-selected="true" href="#current-chat")
             svg.h-25px.w-25px.me-2(fill='currentColor')
               use(xlink:href='./images/icons/sprite.svg#bubble')
             span.d-none.d-md-inline.small Чат

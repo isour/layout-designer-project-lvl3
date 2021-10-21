@@ -20,15 +20,15 @@ html(lang='ru')
 
   body.layout.bg-gray.p-0.p-md-4
     .container-xxl.h-100
-      main.layout-container.bg-white.radius-1.h-100.row.flex-md-row.overflow-hidden
+      main.layout-container.bg-white.radius-1.h-100.row.flex-md-row.overflow-md-hidden
         aside.layout-aside.col.col-md-4.px-0.h-100.d-flex.flex-column
           block header
             +header.layout-header.order-1.order-md-0
           .layout-aside-content.order-0.order-md-1.tab-content.flex-grow-1.flex-shrink-1.overflow-hidden
             +contacts.layout-contacts.tab-pane.fade.pt-5.px-4.h-100#contacts(role = "tabpanel" class = chatPage === undefined ? "show active" : "")
-            +messages.layout-chatslist.tab-pane.fade.pt-5.px-4.h-100#chats(class = chatPage === true ? "show active" : "")
-            +profile.layout-profile.tab-pane.fade.pt-5.px-4.h-100#profile
-            .layout-chat.tab-pane.fade.h-100#current-chat
+            +messages.layout-chatslist.tab-pane.fade.pt-5.px-4.h-100#chats(role = "tabpanel" class = chatPage === true ? "show active" : "")
+            +profile.layout-profile.tab-pane.fade.pt-5.px-4.h-100#profile(role = "tabpanel")
+            .layout-chat.tab-pane.fade.h-100#current-chat(role = "tabpanel")
               block chat
         .layout-content.border-md-start.border-gray.col.h-100.d-none.d-md-block.p-0
           block content

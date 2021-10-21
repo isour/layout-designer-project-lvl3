@@ -3,25 +3,26 @@ mixin header(data)
     a.header-logo.mr-auto.text-white.me-auto.d-flex.align-items-center(href = "/" title = "На главную")
       svg.h-25px.w-25px(fill='currentColor')
         use(xlink:href='./images/icons/sprite.svg#logo')
-    nav.header-menu.nav.nav-tabs.border-0
-      if data && data.chat
-        li.nav-item.d-md-none
-          a.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#current-chat" role = "tab"  aria-controls="contacts-tab" aria-selected="true" href="#current-chat")
+    nav.header-menu.border-0
+      ul.nav.nav-tabs.header-ul.border-0(role="tablist")
+        if data && data.chat
+          li.nav-item.d-md-none
+            a.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#current-chat" role = "tab"  aria-controls="current-chat" aria-selected="true" href="#current-chat")
+              svg.h-25px.w-25px.me-2(fill='currentColor')
+                use(xlink:href='./images/icons/sprite.svg#bubble')
+              span.d-none.d-md-inline.small Чат
+        li.nav-item
+          a.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#contacts" role = "tab"  aria-controls="contacts" aria-selected="false" href="#contacts" class = chatPage === undefined ? "active" : "")
             svg.h-25px.w-25px.me-2(fill='currentColor')
-              use(xlink:href='./images/icons/sprite.svg#bubble')
-            span.d-none.d-md-inline.small Чат
-      li.nav-item
-        a.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#contacts" role = "tab"  aria-controls="contacts-tab" aria-selected="false" href="#contacts")
-          svg.h-25px.w-25px.me-2(fill='currentColor')
-            use(xlink:href='./images/icons/sprite.svg#people')
-          span.d-none.d-md-inline.small Контакты
-      li.nav-item
-        a.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#chats" role = "tab" aria-controls="chats-tab" aria-selected="false" href="#chats")
-          svg.h-25px.w-25px.me-2(fill='currentColor')
-            use(xlink:href='./images/icons/sprite.svg#chat')
-          span.d-none.d-md-inline.small Сообщения
-      li.nav-item
-        a.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#profile" role = "tab" aria-controls="profile-tab" aria-selected="false" href="#profile")
-          svg.h-25px.w-25px.me-2(fill='currentColor')
-            use(xlink:href='./images/icons/sprite.svg#person')
-          span.d-none.d-md-inline.small Профиль
+              use(xlink:href='./images/icons/sprite.svg#people')
+            span.d-none.d-md-inline.small Контакты
+        li.nav-item
+          a.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#chats" role = "tab" aria-controls="chats" aria-selected="false" href="#chats"  class = chatPage === true ? "active" : "")
+            svg.h-25px.w-25px.me-2(fill='currentColor')
+              use(xlink:href='./images/icons/sprite.svg#chat')
+            span.d-none.d-md-inline.small Сообщения
+        li.nav-item
+          a.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#profile" role = "tab" aria-controls="profile" aria-selected="false" href="#profile")
+            svg.h-25px.w-25px.me-2(fill='currentColor')
+              use(xlink:href='./images/icons/sprite.svg#person')
+            span.d-none.d-md-inline.small Профиль

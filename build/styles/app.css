@@ -12897,16 +12897,16 @@ h6,
 .layout-container {
   position: relative;
 }
-.layout-contacts, .layout-chatlist, .layout-profile, .layout-chat {
+.layout-contacts, .layout-chatslist, .layout-profile, .layout-chat {
   overflow-y: auto;
 }
-.layout-contacts, .layout-chatlist, .layout-profile, .layout-chat {
+.layout-contacts, .layout-chatslist, .layout-profile, .layout-chat {
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-x: hidden;
   overflow-y: auto;
 }
-.layout-contacts::-webkit-scrollbar, .layout-chatlist::-webkit-scrollbar, .layout-profile::-webkit-scrollbar, .layout-chat::-webkit-scrollbar {
+.layout-contacts::-webkit-scrollbar, .layout-chatslist::-webkit-scrollbar, .layout-profile::-webkit-scrollbar, .layout-chat::-webkit-scrollbar {
   display: none;
 }
 
@@ -13120,7 +13120,7 @@ h6,
 }
 
 .chat-form-input {
-  padding: 1.5rem 0.5rem;
+  padding: 1rem 0.5rem;
   border: none;
 }
 .chat-form-submit {

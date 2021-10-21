@@ -6,22 +6,22 @@ mixin header(data)
     nav.header-menu.nav.nav-tabs.border-0
       if data && data.chat
         li.nav-item.d-md-none
-          button.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#chat" role = "tab"  aria-controls="contacts-tab" aria-selected="true")
+          a.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#chat" role = "tab"  aria-controls="contacts-tab" aria-selected="true")
             svg.h-25px.w-25px.me-2(fill='currentColor')
               use(xlink:href='./images/icons/sprite.svg#bubble')
             span.d-none.d-md-inline.small Чат
       li.nav-item
-        button.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#contacts" role = "tab"  aria-controls="contacts-tab" aria-selected="false")
+        a.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#contacts" role = "tab"  aria-controls="contacts-tab" aria-selected="false")
           svg.h-25px.w-25px.me-2(fill='currentColor')
             use(xlink:href='./images/icons/sprite.svg#people')
           span.d-none.d-md-inline.small Контакты
       li.nav-item
-        button.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#chats" role = "tab" aria-controls="chats-tab" aria-selected="false")
+        a.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#chats" role = "tab" aria-controls="chats-tab" aria-selected="false")
           svg.h-25px.w-25px.me-2(fill='currentColor')
             use(xlink:href='./images/icons/sprite.svg#chat')
           span.d-none.d-md-inline.small Сообщения
       li.nav-item
-        button.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#profile" role = "tab" aria-controls="profile-tab" aria-selected="false")
+        a.nav-link.border-0.text-light.px-08-r.bg-transparent(data-bs-toggle = "tab" data-bs-target="#profile" role = "tab" aria-controls="profile-tab" aria-selected="false")
           svg.h-25px.w-25px.me-2(fill='currentColor')
             use(xlink:href='./images/icons/sprite.svg#person')
           span.d-none.d-md-inline.small Профиль
